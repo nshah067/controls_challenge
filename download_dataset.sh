@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Running download_dataset.sh"
+
 if [ ! -d "data" ]; then
     mkdir data
 fi

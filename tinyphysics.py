@@ -110,6 +110,13 @@ class TinyPhysicsSimulator:
     seed = int(md5(self.data_path.encode()).hexdigest(), 16) % 10**4
     np.random.seed(seed)
 
+    ###Added code
+    try:
+      self.controller.set_history(state_target_futureplans, self.data)
+    except Exception as e:
+      print(str(e))
+    ###Added code
+
   def get_data(self, data_path: str) -> pd.DataFrame:
     df = pd.read_csv(data_path)
     processed_df = pd.DataFrame({
